@@ -28,7 +28,7 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: `https://chatapp-d1jz.onrender.com`,
+    origin: `https://chatapp-d1jz.onrender.com/`,
     credentials: true,
   },
 });
