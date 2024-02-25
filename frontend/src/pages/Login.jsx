@@ -45,7 +45,7 @@ const Login = () => {
       const { email, password } = Formdata;
 
       try {
-        const response = await axios.post(logRoute, {
+        const response = await axios.post("/api/auth/login", {
           email: email,
           password: password,
         });

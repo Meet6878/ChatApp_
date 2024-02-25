@@ -28,7 +28,7 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: `https://chat-app-gules-eight.vercel.app`,
+    origin: `https://chatapp-d1jz.onrender.com`,
     credentials: true,
   },
 });

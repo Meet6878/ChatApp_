@@ -12,7 +12,7 @@ export default function ChatCointainer({ currentChat, currentUser, socket }) {
   const scrollRef = useRef();
 
   const handleSendMsg = async (msg) => {
-    await axios.post(`${addMassage}`, {
+    await axios.post(`${"/api/massage/addmassage"}`, {
       from: currentUser._id,
       to: currentChat._id,
       massage: msg,
@@ -30,7 +30,7 @@ export default function ChatCointainer({ currentChat, currentUser, socket }) {
 
   const getMassages = async () => {
     if (currentChat) {
-      const response = await axios.post(getAllMassage, {
+      const response = await axios.post("/api/massage/getmassage", {
         from: currentUser._id,
         to: currentChat._id,
       });

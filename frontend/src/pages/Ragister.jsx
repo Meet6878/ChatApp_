@@ -67,7 +67,7 @@ const Ragister = () => {
       const { name, email, password, cpassword } = Formdata;
 
       try {
-        const response = await axios.post(RegisterRoute, Formdata);
+        const response = await axios.post("/api/auth/register", Formdata);
         // console.log(response.data.newUsers);
         if (response) {
           localStorage.setItem(

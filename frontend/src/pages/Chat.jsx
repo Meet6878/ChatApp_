@@ -24,7 +24,7 @@ const Chat = () => {
       // console.log("crr", crr);
       if (crr) {
         if (crr.isAvatarImageSet) {
-          const data = await axios.get(`${allUsers}/${crr._id}`);
+          const data = await axios.get(`${"/api/auth/allusers"}/${crr._id}`);
           setContacts(data.data);
           setCurrentUser(crr);
         } else {

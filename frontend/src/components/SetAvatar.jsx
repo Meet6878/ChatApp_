@@ -28,9 +28,12 @@ export default function SetAvatar({}) {
       toast.error("Please select an avatar", toastOptions);
     } else {
       const user = await JSON.parse(localStorage.getItem("chat-app-user"));
-      const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
-        image: avatars[selectAvatar],
-      });
+      const { data } = await axios.post(
+        `${`/api/auth/setavatar`}/${user._id}`,
+        {
+          image: avatars[selectAvatar],
+        }
+      );
 
       if (data.isSet) {
         user.isAvatarImageSet = true;
