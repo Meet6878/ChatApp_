@@ -43,12 +43,18 @@ const Login = () => {
     };
     if (handleValidate()) {
       const { email, password } = Formdata;
-
+      const config = {
+        headers: { "Content-Type": "application/json" },
+      };
       try {
-        const response = await axios.post("/api/auth/login", {
-          email: email,
-          password: password,
-        });
+        const response = await axios.post(
+          "/api/auth/login",
+          {
+            email: email,
+            password: password,
+          },
+          config
+        );
         if (response) {
           localStorage.setItem(
             "chat-app-user",
