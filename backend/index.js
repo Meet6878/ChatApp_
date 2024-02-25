@@ -11,12 +11,12 @@ const path = require("path");
 const app = express();
 
 dotenv.config();
-
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 DBconnect();
 app.use(function (req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   const allowedOrigins = [
     "http://localhost:3000",
     "https://chatapp-d1jz.onrender.com",
